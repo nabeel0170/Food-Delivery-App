@@ -1,0 +1,10 @@
+# Add files here to ignore them from prettier formatting
+
+/.bundle
+/.husky
+/android
+/ios
+/node_modules
+/src/assets
+/vendor
+/coverage

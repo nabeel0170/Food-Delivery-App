@@ -1,0 +1,16 @@
+echo "Running yarn format..."
+yarn format:fix
+
+echo "Running yarn lint..."
+yarn lint:fix
+
+echo "Running yarn typecheck..."
+yarn typecheck
+
+echo "Running yalc check..."
+yalc check
+
+echo "Running ggshield secret scan pre-commit..."
+ggshield secret scan pre-commit
+
+echo "Pre-commit checks completed!"
