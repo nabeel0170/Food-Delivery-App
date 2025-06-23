@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import { verticalScale } from 'react-native-size-matters';
 
 import CategoryFilters from '@/features/categories/components/CategoryFilters';
 import { createStyleSheet, useAppStyles } from '@/hooks';
@@ -21,6 +22,7 @@ export default PopularCategoriesView;
 const stylesFunc = createStyleSheet((colors) => ({
   container: {
     backgroundColor: colors.background.subtle,
+    paddingTop: verticalScale(18),
   },
   title: {
     fontSize: 20,
