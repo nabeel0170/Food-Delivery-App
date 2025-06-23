@@ -101,8 +101,8 @@ const stylesFunc = createStyleSheet((colors) => ({
     backgroundColor: '#ff3b30',
   },
   iconContainer: {
-    width: scale(72),
-    height: verticalScale(72),
+    width: 72,
+    height: 72,
     borderRadius: 9999,
     justifyContent: 'center',
     alignItems: 'center',

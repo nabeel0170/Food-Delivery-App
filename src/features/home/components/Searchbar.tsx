@@ -47,6 +47,8 @@ const stylesFunc = createStyleSheet((colors) => ({
     borderRadius: 32,
     paddingHorizontal: 16,
     paddingVertical: 10,
+    height: 48,
+    boxSizing: 'border-box',
   },
   activeSearchContainer: {
     flexDirection: 'row',
@@ -56,6 +58,7 @@ const stylesFunc = createStyleSheet((colors) => ({
     paddingHorizontal: 16,
     paddingVertical: 10,
     borderColor: colors.icon.default,
+    height: 48,
     borderWidth: 1,
   },
   icon: {
