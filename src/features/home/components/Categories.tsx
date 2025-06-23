@@ -22,6 +22,7 @@ const CATEGORY_DATA: Category[] = [
 const CategoryList = () => {
   const styles = useAppStyles(stylesFunc);
   const [selectedKey, setSelectedKey] = useState('all');
+  // Use refs to store Animated.Value for each category for efficient updates.
   const animatedValues = useRef(
     CATEGORY_DATA.reduce(
       (acc, item) => {
@@ -32,6 +33,7 @@ const CategoryList = () => {
     ),
   ).current;
 
+  // Animate background color for each category when selection changes.
   useEffect(() => {
     CATEGORY_DATA.forEach((item) => {
       Animated.timing(animatedValues[item.key], {
@@ -42,6 +44,7 @@ const CategoryList = () => {
     });
   }, [selectedKey, animatedValues]);
 
+  // Handle user selecting a category tab.
   const handlePress = (key: string) => {
     setSelectedKey(key);
   };
@@ -54,6 +57,7 @@ const CategoryList = () => {
       renderItem={({ item }) => {
         const Icon = item.icon;
         const isSelected = item.key === selectedKey;
+        // Interpolate background color for smooth animated highlight.
         const bgInterpolation = animatedValues[item.key].interpolate({
           inputRange: [0, 1],
           outputRange: ['#f2f3f5', '#ff3b30'],

@@ -1,12 +1,25 @@
+import { useEffect } from 'react';
 import { ScrollView } from 'react-native-gesture-handler';
+import { scale } from 'react-native-size-matters';
 
 import PromotionalBanner from '@/features/categories/components/PromotionalBanner';
 import CategoryGridView from '@/features/categories/views/CategoryGridView';
 import PopularCategoriesView from '@/features/categories/views/PopularCategoriesView';
-import { createStyleSheet, useAppStyles } from '@/hooks';
+import { createStyleSheet, useAppDispatch, useAppStyles } from '@/hooks';
+import { fetchCategories } from '@/store/slices/categoriesSlice';
 
+// CategoriesScreen is the main entry for browsing all categories.
+// Fetches category data on mount and composes the categories UI sections.
 const CategoriesScreen = () => {
   const styles = useAppStyles(stylesFunc);
+  const dispatch = useAppDispatch();
+
+  // Fetch categories when the screen mounts
+  useEffect(() => {
+    dispatch(fetchCategories());
+  }, [dispatch]);
+
+  // Layout: promotional banner, popular categories, and category grid
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
       <PromotionalBanner
@@ -25,6 +38,6 @@ export default CategoriesScreen;
 const stylesFunc = createStyleSheet((colors) => ({
   container: {
     backgroundColor: colors.background.subtle,
-    paddingHorizontal: 16,
+    paddingHorizontal: scale(16),
   },
 }));

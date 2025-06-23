@@ -5,11 +5,14 @@ import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 
 import { createStyleSheet, useAppStyles } from '@/hooks';
 
+// FreeDeliveryCard promotes a free delivery offer with a gradient background.
+// Uses a pressable button to trigger an action (e.g., start order).
 const FreeDeliveryCard = ({ onPress }: { onPress: () => void }) => {
   const styles = useAppStyles(stylesFunc);
 
   return (
     <View style={styles.container}>
+      {/* Gradient background for visual emphasis */}
       <LinearGradient
         colors={['#FF4B4B', '#FF8E3C']}
         end={{ x: 1, y: 0 }}
@@ -19,6 +22,7 @@ const FreeDeliveryCard = ({ onPress }: { onPress: () => void }) => {
           <Text style={styles.title}>Free Delivery</Text>
           <Text style={styles.subtitle}>On your first order!</Text>
 
+          {/* Call-to-action button */}
           <Pressable style={styles.button} onPress={onPress}>
             <Text style={styles.buttonText}>Order Now</Text>
           </Pressable>

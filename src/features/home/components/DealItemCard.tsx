@@ -13,6 +13,8 @@ interface DealItem {
   discount: number;
 }
 
+// DealItemCard displays a promotional food deal with image, prices, and discount badge.
+// Used in horizontal lists or grids to promote special items.
 const DealItemCard = ({
   dealItem,
   onPress,
@@ -23,22 +25,28 @@ const DealItemCard = ({
   const styles = useAppStyles(stylesFunc);
 
   return (
+    // Pressable allows navigation or selection when the card is tapped.
     <Pressable style={styles.card} onPress={onPress}>
       <View style={styles.imageContainer}>
+        {/* Item image with overlayed discount badge */}
         <Image source={{ uri: dealItem.image }} style={styles.image} />
         <View style={styles.discountBadge}>
           <Text style={styles.discountText}>-{dealItem.discount}%</Text>
         </View>
       </View>
       <View style={styles.content}>
+        {/* Restaurant name (truncated if too long) */}
         <Text numberOfLines={1} style={styles.restaurantName}>
           {dealItem.restaurantName}
         </Text>
+        {/* Item name (truncated if too long) */}
         <Text numberOfLines={1} style={styles.itemName}>
           {dealItem.itemName}
         </Text>
         <View style={styles.priceRow}>
+          {/* Current price highlighted */}
           <Text style={styles.currentPrice}>${dealItem.currentPrice}</Text>
+          {/* Original price shown with strikethrough */}
           <Text style={styles.originalPrice}>${dealItem.originalPrice}</Text>
         </View>
       </View>

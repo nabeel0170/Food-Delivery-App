@@ -13,9 +13,13 @@ const CategoryCard = ({ imageUrl, title, subtitle }: CategoryCardProps) => {
   const styles = useAppStyles(stylesFunc);
 
   return (
+    // Pressable for category selection or navigation
     <Pressable style={styles.card}>
+      {/* Category image */}
       <Image source={{ uri: imageUrl }} style={styles.image} />
+      {/* Category title */}
       <Text style={styles.title}>{title}</Text>
+      {/* Category subtitle/description */}
       <Text style={styles.subtitle}>{subtitle}</Text>
     </Pressable>
   );
@@ -23,17 +27,17 @@ const CategoryCard = ({ imageUrl, title, subtitle }: CategoryCardProps) => {
 
 const stylesFunc = createStyleSheet((colors) => ({
   card: {
-    borderRadius: 12,
+    borderRadius: scale(12),
     backgroundColor: colors.background.default,
     overflow: 'hidden',
     flex: 1,
-    margin: 8,
+    margin: scale(8),
   },
   image: {
     width: '100%',
     height: verticalScale(110),
-    borderTopLeftRadius: 12,
-    borderTopRightRadius: 12,
+    borderTopLeftRadius: scale(12),
+    borderTopRightRadius: scale(12),
   },
   title: {
     fontWeight: '500',

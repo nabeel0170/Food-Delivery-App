@@ -4,6 +4,8 @@ import { Text, View } from 'react-native';
 import CategoryFilters from '@/features/categories/components/CategoryFilters';
 import { createStyleSheet, useAppStyles } from '@/hooks';
 
+// PopularCategoriesView displays a titled section with a horizontal list of category filters.
+// Uses CategoryFilters to allow quick category selection.
 const PopularCategoriesView = () => {
   const styles = useAppStyles(stylesFunc);
   return (

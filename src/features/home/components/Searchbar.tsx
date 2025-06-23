@@ -5,12 +5,15 @@ import { TextInput, View } from 'react-native';
 import { useColors } from '@/contexts';
 import { createStyleSheet, useAppStyles } from '@/hooks';
 
+// SearchBar provides a styled input for searching restaurants or dishes.
+// Manages focus state to update styling when active.
 const SearchBar = () => {
   const styles = useAppStyles(stylesFunc);
   const [searchValue, setSearchValue] = useState('');
   const [searchActive, setSearchActive] = useState(false);
   const { colors } = useColors();
 
+  // Set active state when input is focused
   const handleSearchPress = () => {
     setSearchActive(true);
   };

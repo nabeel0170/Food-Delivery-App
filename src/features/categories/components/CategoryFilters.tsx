@@ -9,8 +9,9 @@ import {
   Sandwich,
   SoupIcon,
 } from 'lucide-react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { scale, verticalScale } from 'react-native-size-matters';
 
 import { useColors } from '@/contexts';
 import { createStyleSheet, useAppStyles } from '@/hooks';
@@ -32,13 +33,14 @@ const categories: Category[] = [
   { id: '8', name: 'Seafood', icon: Fish },
 ];
 
+// CategoryFilters displays a horizontal list of selectable categories with icons.
+// Highlights the selected category and updates state on press.
 const CategoryFilters = () => {
   const styles = useAppStyles(stylesFunc);
-  const [selectedCategoryId, setSelectedCategoryId] = React.useState(
-    categories[0].id,
-  );
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string>('');
   const { colors } = useColors();
 
+  // Update selected category when pressed
   const handleCategoryPress = (category: Category) => {
     setSelectedCategoryId(category.id);
   };
@@ -61,6 +63,7 @@ const CategoryFilters = () => {
                   styles.iconContainer,
                   isSelected && styles.selectedItem,
                 ]}>
+                {/* Render icon with highlight if selected */}
                 <IconComponent
                   color={isSelected ? colors.text.white : '#ff3b30'}
                   size={40}
@@ -86,23 +89,23 @@ export default CategoryFilters;
 
 const stylesFunc = createStyleSheet((colors) => ({
   container: {
-    paddingVertical: 16,
+    paddingVertical: verticalScale(16),
     backgroundColor: colors.background.subtle,
   },
   categoryItem: {
     alignItems: 'center',
-    marginHorizontal: 8,
+    marginHorizontal: scale(8),
   },
   selectedItem: {
     backgroundColor: '#ff3b30',
   },
   iconContainer: {
-    width: 74,
-    height: 74,
-    borderRadius: 50,
+    width: scale(74),
+    height: verticalScale(74),
+    borderRadius: scale(50),
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 8,
+    marginBottom: verticalScale(8),
     backgroundColor: colors.text.white,
   },
   categoryText: {

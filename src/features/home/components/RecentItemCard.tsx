@@ -1,10 +1,11 @@
 import { Image, Pressable, Text, View } from 'react-native';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 
-import { RecentOrderItem } from '@/constants';
 import { createStyleSheet, useAppStyles } from '@/hooks';
+import { RecentOrderItem } from '@/types';
 
-// RecentItemOrderCard Component
+// RecentItemOrderCard displays a summary of a recently ordered item.
+// Includes an image, restaurant, items, and a reorder button for convenience.
 const RecentItemOrderCard = ({
   orderItem,
   onPress,
@@ -17,16 +18,19 @@ const RecentItemOrderCard = ({
   return (
     <View style={styles.card}>
       <View style={styles.content}>
+        {/* Item image and info */}
         <Image source={{ uri: orderItem.image }} style={styles.image} />
         <View style={styles.textContainer}>
           <Text numberOfLines={1} style={styles.restaurantName}>
             {orderItem.restaurantName}
           </Text>
+          {/* List of items in the order */}
           <Text numberOfLines={2} style={styles.items}>
             {orderItem.items.join(', ')}
           </Text>
         </View>
       </View>
+      {/* Reorder button for quick repeat order */}
       <Pressable style={styles.reorderButton} onPress={onPress}>
         <Text style={styles.reorderText}>Reorder</Text>
       </Pressable>
