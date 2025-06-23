@@ -23,7 +23,7 @@ const SearchBar = () => {
       style={
         searchActive ? styles.activeSearchContainer : styles.searchContainer
       }>
-      <Search color={colors.icon.default} size={18} style={styles.icon} />
+      <Search color={colors.icon.default} size={20} style={styles.icon} />
       <TextInput
         placeholder='Search restaurants, dishes...'
         placeholderTextColor='#6c7380'
@@ -63,8 +63,7 @@ const stylesFunc = createStyleSheet((colors) => ({
   },
   input: {
     flex: 1,
-    fontSize: 16,
-    color: '#000',
+    fontSize: 14,
     padding: 0,
   },
 }));

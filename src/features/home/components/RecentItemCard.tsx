@@ -53,8 +53,8 @@ const stylesFunc = createStyleSheet((colors) => ({
     marginBottom: verticalScale(2),
   },
   image: {
-    width: scale(40),
-    height: scale(40),
+    width: scale(48),
+    height: scale(48),
     borderRadius: moderateScale(25),
     backgroundColor: '#F5F5F5',
     marginRight: scale(12),
@@ -63,23 +63,25 @@ const stylesFunc = createStyleSheet((colors) => ({
     flex: 1,
   },
   restaurantName: {
-    fontSize: moderateScale(16),
+    fontSize: 14,
     fontWeight: '500',
     color: colors.text.default,
   },
   items: {
-    fontSize: moderateScale(12),
+    fontSize: 12,
+    fontWeight: '400',
     color: colors.text.secondary,
     lineHeight: moderateScale(16),
   },
   reorderButton: {
     backgroundColor: '#FF4444',
     paddingVertical: verticalScale(8),
-    borderRadius: moderateScale(50),
+    borderRadius: 50,
     alignItems: 'center',
   },
   reorderText: {
-    fontSize: moderateScale(14),
+    fontSize: 14,
+    fontWeight: '500',
     color: colors.text.white,
   },
 }));

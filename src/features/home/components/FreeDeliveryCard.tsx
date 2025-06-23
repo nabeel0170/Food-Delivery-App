@@ -55,14 +55,14 @@ const stylesFunc = createStyleSheet((colors) => ({
     alignItems: 'flex-start',
   },
   title: {
-    fontSize: 32,
+    fontSize: 24,
     fontWeight: '700',
     color: colors.text.white,
     marginBottom: verticalScale(4),
     letterSpacing: -0.5,
   },
   subtitle: {
-    fontSize: 18,
+    fontSize: 14,
     color: colors.text.white,
     opacity: 0.9,
     marginBottom: verticalScale(16),
@@ -83,8 +83,8 @@ const stylesFunc = createStyleSheet((colors) => ({
     shadowRadius: 2.22,
   },
   buttonText: {
-    fontSize: 20,
-    fontWeight: '400',
+    fontSize: 14,
+    fontWeight: '500',
     color: '#FF4B4B',
   },
 }));

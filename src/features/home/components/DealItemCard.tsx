@@ -67,8 +67,8 @@ const stylesFunc = createStyleSheet((colors) => ({
     position: 'relative',
   },
   image: {
-    width: '100%',
-    height: verticalScale(80),
+    width: scale(171),
+    height: verticalScale(96),
     backgroundColor: '#F5F5F5',
   },
   discountBadge: {
@@ -77,7 +77,7 @@ const stylesFunc = createStyleSheet((colors) => ({
     left: scale(8),
     backgroundColor: '#FF4444',
     paddingHorizontal: scale(8),
-    paddingVertical: verticalScale(2),
+    paddingVertical: verticalScale(4),
     borderRadius: moderateScale(16),
   },
   discountText: {
@@ -89,14 +89,14 @@ const stylesFunc = createStyleSheet((colors) => ({
     padding: scale(12),
   },
   restaurantName: {
-    fontSize: moderateScale(12),
+    fontSize: 12,
     fontWeight: '400',
     color: colors.text.secondary,
     marginBottom: verticalScale(4),
   },
   itemName: {
-    fontSize: moderateScale(16),
-    fontWeight: '600',
+    fontSize: 14,
+    fontWeight: '500',
     color: colors.text.default,
     marginBottom: verticalScale(8),
   },
@@ -106,12 +106,12 @@ const stylesFunc = createStyleSheet((colors) => ({
     gap: scale(8),
   },
   currentPrice: {
-    fontSize: moderateScale(16),
+    fontSize: 16,
     fontWeight: '700',
     color: '#FF4444',
   },
   originalPrice: {
-    fontSize: moderateScale(14),
+    fontSize: 12,
     fontWeight: '400',
     color: colors.text.secondary,
     textDecorationLine: 'line-through',

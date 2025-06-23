@@ -48,7 +48,8 @@ const stylesFunc = createStyleSheet((colors) => ({
   },
   subtitle: {
     color: colors.text.secondary,
-    fontSize: 15,
+    fontSize: 14,
+    fontWeight: '400',
     marginBottom: verticalScale(12),
     marginHorizontal: scale(12),
   },

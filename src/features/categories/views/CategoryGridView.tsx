@@ -1,5 +1,6 @@
 import React from 'react';
 import { FlatList } from 'react-native';
+import { verticalScale } from 'react-native-size-matters';
 
 import { createStyleSheet, useAppSelector, useAppStyles } from '@/hooks';
 import { selectCategories } from '@/store/selectors/categoriesSelector';
@@ -15,6 +16,7 @@ const CategoryGridView = () => {
   return (
     <FlatList
       columnWrapperStyle={styles.columnWrapper}
+      contentContainerStyle={styles.container}
       data={categories}
       keyExtractor={(_, i) => i.toString()}
       numColumns={2}
@@ -28,6 +30,9 @@ const CategoryGridView = () => {
 const stylesFunc = createStyleSheet(() => ({
   columnWrapper: {
     justifyContent: 'space-between',
+  },
+  container: {
+    paddingBottom: verticalScale(30),
   },
 }));
 

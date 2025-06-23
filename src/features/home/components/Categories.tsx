@@ -1,7 +1,7 @@
 import { Fish, Home, Pizza, Sandwich, Soup } from 'lucide-react-native';
 import React, { useEffect, useRef, useState } from 'react';
 import { Animated, FlatList, Pressable, Text } from 'react-native';
-import { verticalScale } from 'react-native-size-matters';
+import { scale, verticalScale } from 'react-native-size-matters';
 
 import { createStyleSheet, useAppStyles } from '@/hooks';
 
@@ -70,7 +70,7 @@ const CategoryList = () => {
                 { backgroundColor: bgInterpolation },
                 styles.iconContainerBase,
               ]}>
-              <Icon color={isSelected ? '#fff' : '#2c2c2c'} size={20} />
+              <Icon color={isSelected ? '#fff' : '#2c2c2c'} size={24} />
             </Animated.View>
             <Text style={styles.label}>{item.label}</Text>
           </Pressable>
@@ -87,16 +87,15 @@ const stylesFunc = createStyleSheet(() => ({
   listContainer: { paddingVertical: verticalScale(12) },
   item: {
     alignItems: 'center',
-    marginRight: 16,
-    paddingRight: verticalScale(16),
+    marginRight: scale(27),
   },
   iconContainerBase: {
     borderRadius: 40,
-    padding: 16,
+    padding: 14,
   },
   label: {
     marginTop: 6,
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: '500',
     color: '#000',
   },

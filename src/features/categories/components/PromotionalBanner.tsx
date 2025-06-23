@@ -53,7 +53,7 @@ const stylesFunc = createStyleSheet((colors) => ({
     overflow: 'hidden',
   },
   backgroundImage: {
-    height: verticalScale(100),
+    height: verticalScale(120),
     justifyContent: 'flex-end',
   },
   imageStyle: {
@@ -77,7 +77,7 @@ const stylesFunc = createStyleSheet((colors) => ({
     marginBottom: 4,
   },
   subtitle: {
-    fontSize: 16,
+    fontSize: 20,
     color: colors.text.white,
     opacity: 0.9,
   },

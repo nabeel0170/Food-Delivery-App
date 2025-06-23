@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, Text, View } from 'react-native';
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import { scale, verticalScale } from 'react-native-size-matters';
 
 import RecentItemOrderCard from '@/features/home/components/RecentItemCard';
 import { createStyleSheet, useAppSelector, useAppStyles } from '@/hooks';
@@ -47,7 +47,7 @@ const stylesFunc = createStyleSheet((colors) => ({
     paddingBottom: verticalScale(30),
   },
   title: {
-    fontSize: moderateScale(20),
+    fontSize: 18,
     fontWeight: '700',
     color: colors.text.default,
     marginBottom: verticalScale(16),

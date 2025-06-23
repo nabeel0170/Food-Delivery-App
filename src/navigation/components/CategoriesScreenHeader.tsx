@@ -44,7 +44,7 @@ const CategoriesScreenHeader = ({
         android_ripple={{ color: colors.icon.disabled }}
         style={styles.rightButton}
         onPress={onSearchPress}>
-        <Search color={colors.text.default} size={22} />
+        <Search color={colors.text.default} size={24} />
       </Pressable>
     </View>
   );
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   },
   title: {
     flex: 1,
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: '400',
     textAlign: 'center',
   },

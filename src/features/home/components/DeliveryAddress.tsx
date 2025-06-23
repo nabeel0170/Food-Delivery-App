@@ -29,7 +29,7 @@ const DeliveryAddress = () => {
 
 export default DeliveryAddress;
 
-const stylesFunc = createStyleSheet(() => ({
+const stylesFunc = createStyleSheet((colors) => ({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -41,14 +41,16 @@ const stylesFunc = createStyleSheet(() => ({
   },
   label: {
     fontSize: 12,
+    color: colors.text.secondary,
   },
   addressRow: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   address: {
-    fontSize: 16,
-    fontWeight: '600',
+    fontSize: 14,
+    fontWeight: '500',
+    color: colors.text.default,
   },
   chevron: {
     marginLeft: 4,

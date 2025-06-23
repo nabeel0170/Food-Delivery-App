@@ -52,14 +52,14 @@ const stylesFunc = createStyleSheet((colors) => ({
   },
   image: {
     width: '100%',
-    height: verticalScale(100),
+    height: verticalScale(128),
   },
   content: {
     padding: scale(12),
   },
   name: {
-    fontSize: moderateScale(16),
-    fontWeight: '600',
+    fontSize: 16,
+    fontWeight: '500',
     color: colors.text.default,
     marginBottom: verticalScale(8),
   },
@@ -73,17 +73,17 @@ const stylesFunc = createStyleSheet((colors) => ({
     alignItems: 'center',
   },
   rating: {
-    fontSize: moderateScale(14),
+    fontSize: 14,
     color: colors.text.default,
     marginLeft: scale(4),
-    fontWeight: '500',
+    fontWeight: '400',
   },
   timeContainer: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   deliveryTime: {
-    fontSize: moderateScale(12),
+    fontSize: 14,
     color: colors.text.default,
     marginLeft: scale(4),
   },

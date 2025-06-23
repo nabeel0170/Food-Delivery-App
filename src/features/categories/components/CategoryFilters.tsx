@@ -66,8 +66,9 @@ const CategoryFilters = () => {
                 {/* Render icon with highlight if selected */}
                 <IconComponent
                   color={isSelected ? colors.text.white : '#ff3b30'}
-                  size={40}
+                  height={verticalScale(32)}
                   strokeWidth={2}
+                  width={scale(32)}
                 />
               </View>
               <Text
@@ -100,9 +101,9 @@ const stylesFunc = createStyleSheet((colors) => ({
     backgroundColor: '#ff3b30',
   },
   iconContainer: {
-    width: scale(74),
-    height: verticalScale(74),
-    borderRadius: scale(50),
+    width: scale(72),
+    height: verticalScale(72),
+    borderRadius: 9999,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: verticalScale(8),
