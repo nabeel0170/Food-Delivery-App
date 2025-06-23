@@ -1,9 +1,13 @@
 export enum BOTTOM_TAB_SCREENS {
-  EXAMPLE = 'Example',
+  HOME = 'Home',
+  SEARCH = 'Search',
+  ORDERS = 'Orders',
+  CART = 'Cart',
+  PROFILE = 'Profile',
 }
 
 export enum ROOT_STACK_SCREENS {
-  EXAMPLE = 'Example',
+  BOTTOM_TABS_NAVIGATOR = 'BottomTabNavigator',
 }
 
 export enum MODAL_STACK {
