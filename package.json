@@ -2,6 +2,7 @@
   "name": "expo-starter-kit",
   "version": "1.0.0",
   "main": "index.ts",
+  "author": "nabeel0170",
   "scripts": {
     "start": "expo start",
     "start:clear": "expo start -c",
