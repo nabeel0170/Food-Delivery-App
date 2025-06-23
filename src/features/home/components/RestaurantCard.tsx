@@ -1,0 +1,84 @@
+import { Clock, Star } from 'lucide-react-native';
+import { Image, Pressable, Text, View } from 'react-native';
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+
+import { Restaurant } from '@/constants';
+import { createStyleSheet, useAppStyles } from '@/hooks';
+
+const RestaurantCard = ({
+  restaurant,
+  onPress,
+}: {
+  restaurant: Restaurant;
+  onPress: () => void;
+}) => {
+  const styles = useAppStyles(stylesFunc);
+
+  return (
+    <Pressable style={styles.card} onPress={onPress}>
+      <Image source={{ uri: restaurant.image }} style={styles.image} />
+      <View style={styles.content}>
+        <Text numberOfLines={1} style={styles.name}>
+          {restaurant.name}
+        </Text>
+        <View style={styles.infoRow}>
+          <View style={styles.ratingContainer}>
+            <Star color='#FFA500' size={14} />
+            <Text style={styles.rating}>{restaurant.rating}</Text>
+          </View>
+          <View style={styles.timeContainer}>
+            <Clock color='#6c7380' size={14} />
+            <Text style={styles.deliveryTime}>{restaurant.deliveryTime}</Text>
+          </View>
+        </View>
+      </View>
+    </Pressable>
+  );
+};
+
+export default RestaurantCard;
+
+const stylesFunc = createStyleSheet((colors) => ({
+  card: {
+    width: scale(160),
+    borderRadius: moderateScale(12),
+    overflow: 'hidden',
+  },
+  image: {
+    width: '100%',
+    height: verticalScale(100),
+  },
+  content: {
+    padding: scale(12),
+  },
+  name: {
+    fontSize: moderateScale(16),
+    fontWeight: '600',
+    color: colors.text.default,
+    marginBottom: verticalScale(8),
+  },
+  infoRow: {
+    flexDirection: 'row',
+    gap: scale(16),
+    alignItems: 'center',
+  },
+  ratingContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  rating: {
+    fontSize: moderateScale(14),
+    color: colors.text.default,
+    marginLeft: scale(4),
+    fontWeight: '500',
+  },
+  timeContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  deliveryTime: {
+    fontSize: moderateScale(12),
+    color: colors.text.default,
+    marginLeft: scale(4),
+  },
+}));
