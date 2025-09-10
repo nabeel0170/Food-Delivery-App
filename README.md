@@ -1,4 +1,4 @@
-# Food Delivery App
+## Food Delivery App
 
 A modern, modular React Native food delivery application with responsive UI, feature-based architecture, and TypeScript support.
 
